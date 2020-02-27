@@ -1,0 +1,7 @@
+__pycache__/
+mnist_data/
+*.stackdump
+*.gch
+*.o
+*.mod
+*.exe

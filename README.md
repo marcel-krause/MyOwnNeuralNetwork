@@ -12,7 +12,7 @@ The development of this program follows the book [Make Your Own Neural Network](
 
 **Changelog** For a documentation about the changes made in this program, check the [Changelog.md](Changelog.md) file.
 
-**MNIST data sets** The MNIST data sets required for the training and performance check of this neural network are **not** part of this repository but can be obtained in a convenient CSV format from ![](https://pjreddie.com/projects/mnist-in-csv/).
+**MNIST data sets** The MNIST data sets required for the training and performance check of this neural network are **not** part of this repository but can be obtained in a convenient CSV format from [https://pjreddie.com/projects/mnist-in-csv/](https://pjreddie.com/projects/mnist-in-csv/).
 
 ## Short General Description of the Artificial Neural Network
 ### General Description of the Network and Network Queries
@@ -35,7 +35,9 @@ In order to peek into the mind of the neural network, this program provides a ba
 The input values are provided as the output vector ![](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BO%7D "\textbf{O}") which is rescaled to the node domain of the final layer ![](https://latex.codecogs.com/gif.latex?k "k") by the function ![](https://latex.codecogs.com/gif.latex?f_i%3A%20%5Cmathbb%7BR%7D%20%5Crightarrow%20%280%2C1%29 "f_i: \mathbb{R} \rightarrow (0,1)") as ![](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BX%7D%5E%7B%28k%29%7D%20%3D%20f_i%28%5Ctextbf%7BO%7D%29 "\textbf{X}^{(k)} = f_i(\textbf{O})").
 
 The values of all nodes in the previous layers are computed by the matrix product 
+
 ![](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BX%7D%20%5E%7B%28n-1%29%7D%20%3D%20f_i%20%5Cleft%28%20%5Cleft%28%20%5Ctextbf%7BW%7D%5E%7B%28n%2Cn-1%29%7D%20%5Cright%29%20%5ET%20%5Csigma%20%5E%7B-1%7D%20%5Cleft%28%20%5Ctextbf%7BX%7D%5E%7B%28n%29%7D%20%5Cright%29%20%5Cright%29 "\textbf{X} ^{(n-1)} = f_i \left( \left( \textbf{W}^{(n,n-1)} \right) ^T \sigma  ^{-1} \left( \textbf{X}^{(n)} \right)  \right)")
+
 where ![](https://latex.codecogs.com/gif.latex?%5Csigma%20%5E%7B-1%7D%20%3A%20%280%2C1%29%20%5Crightarrow%20%5Cmathbb%7BR%7D "\sigma ^{-1} : (0,1) \rightarrow \mathbb{R}") denotes the inverse activation function which in our case is given by the logit function
 ![](https://latex.codecogs.com/gif.latex?%5Csigma%20%5E%7B-1%7D%20%28x%29%20%3D%20%5Cln%20%5Cleft%28%20%5Cfrac%7Bx%7D%7B1-x%7D%20%5Cright%29 "\sigma ^{-1} (x) = \ln \left( \frac{x}{1-x} \right)").
 Since the hereby calculated values of the logit function may lie outside the node domain, we additionally perform a rescaling back to the node domain after each step.
